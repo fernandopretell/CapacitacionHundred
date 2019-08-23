@@ -1,5 +1,6 @@
 package com.example.capacitacionhundred.repository
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
@@ -27,10 +28,24 @@ class NotaRepository(application: Application) {
         InsertNotaAsyncTask(notaDAo).execute(nota)
     }
 
+    fun delete(nota: Nota){
+        DeleteNotaAsyncTask(notaDAo).execute(nota)
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    inner class DeleteNotaAsyncTask(private val notaDao: NotaDao?) : AsyncTask<Nota,Void,Void>(){
+
+        override fun doInBackground(vararg notas: Nota): Void? {
+            notaDao?.delete(notas[0])
+            return  null
+        }
+
+    }
+
+    @SuppressLint("StaticFieldLeak")
     inner class InsertNotaAsyncTask(private val notaDao: NotaDao?) : AsyncTask<Nota,Void,Void>(){
 
         override fun doInBackground(vararg notas: Nota): Void? {
-
             notaDao?.insert(notas[0])
             return  null
         }

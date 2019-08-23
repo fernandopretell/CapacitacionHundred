@@ -6,6 +6,8 @@
         android:layout_height="wrap_content"
         app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:id="@+id/contenedor"
         android:layout_gravity="center_horizontal">
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

@@ -20,6 +20,10 @@ class NotaViewModel(application: Application) : AndroidViewModel(application){
         notaRepository?.insert(nota)
     }
 
+    fun delete(nota:Nota){
+        notaRepository?.delete(nota)
+    }
+
     fun listarNotas():LiveData<List<Nota>>?{
         return list_notas
     }
