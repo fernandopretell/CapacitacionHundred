@@ -23,7 +23,7 @@ class AgregarNotaActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK,i)
             finish()
 
-            //grabo os datos y termina el activity volviendo al activity que lo llamo
+            //grabo los datos y termina el activity volviendo al activity que lo llamo
         }
     }
 }
